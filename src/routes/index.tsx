@@ -1,5 +1,17 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowUpRight, Mail, Linkedin, MapPin } from "lucide-react";
+import { ArrowUpRight, Mail, Linkedin, MapPin, Briefcase } from "lucide-react";
+
+const experience = [
+  {
+    company: "TraxxionAI",
+    role: "Frontend Developer",
+    period: "Web Application",
+    url: "https://www.traxxion.ai/",
+    description:
+      "Contributed to an AI-powered Workforce Management platform — building responsive interfaces for time tracking, intelligent employee scheduling, and real-time labor analytics used by organizations to streamline operations.",
+    stack: ["React", "TypeScript", "TailwindCSS"],
+  },
+];
 
 export const Route = createFileRoute("/")({
   component: Index,
