@@ -1,5 +1,17 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowUpRight, Mail, Linkedin, MapPin } from "lucide-react";
+import { ArrowUpRight, Mail, Linkedin, MapPin, Briefcase } from "lucide-react";
+
+const experience = [
+  {
+    company: "TraxxionAI",
+    role: "Frontend Developer",
+    period: "Web Application",
+    url: "https://www.traxxion.ai/",
+    description:
+      "Contributed to an AI-powered Workforce Management platform — building responsive interfaces for time tracking, intelligent employee scheduling, and real-time labor analytics used by organizations to streamline operations.",
+    stack: ["React", "TypeScript", "TailwindCSS"],
+  },
+];
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -56,6 +68,7 @@ function Index() {
           </a>
           <nav className="hidden gap-8 font-mono text-xs tracking-widest uppercase md:flex">
             <a href="#work" className="hover:text-primary transition-colors">Work</a>
+            <a href="#experience" className="hover:text-primary transition-colors">Experience</a>
             <a href="#about" className="hover:text-primary transition-colors">About</a>
             <a href="#contact" className="hover:text-primary transition-colors">Contact</a>
           </nav>
@@ -146,6 +159,64 @@ function Index() {
                   </div>
                 </div>
               </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="experience" className="border-t border-border/60 px-6 py-32">
+        <div className="mx-auto max-w-6xl">
+          <div className="mb-20">
+            <div className="mb-4 font-mono text-xs tracking-widest uppercase text-muted-foreground">
+              / Experience
+            </div>
+            <h2 className="font-serif text-5xl md:text-7xl">
+              Where I've <span className="italic text-primary">worked</span>
+            </h2>
+          </div>
+
+          <div className="divide-y divide-border/60 border-y border-border/60">
+            {experience.map((job) => (
+              <a
+                key={job.company}
+                href={job.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group grid gap-6 py-10 transition-colors hover:bg-card/40 md:grid-cols-12 md:items-start md:gap-8 md:py-14 md:px-4"
+              >
+                <div className="md:col-span-1 font-mono text-xs tracking-widest text-muted-foreground">
+                  <Briefcase className="h-4 w-4" />
+                </div>
+                <div className="md:col-span-3">
+                  <div className="font-mono text-xs tracking-widest uppercase text-primary">
+                    {job.role}
+                  </div>
+                  <div className="mt-2 font-mono text-xs text-muted-foreground">{job.period}</div>
+                </div>
+                <div className="md:col-span-6">
+                  <h3 className="font-serif text-3xl md:text-5xl leading-tight transition-transform group-hover:-translate-x-1">
+                    {job.company}
+                  </h3>
+                  <p className="mt-4 max-w-xl text-muted-foreground leading-relaxed">
+                    {job.description}
+                  </p>
+                  <div className="mt-5 flex flex-wrap gap-2">
+                    {job.stack.map((s) => (
+                      <span
+                        key={s}
+                        className="rounded-full border border-border px-3 py-1 font-mono text-[10px] tracking-widest uppercase text-muted-foreground"
+                      >
+                        {s}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+                <div className="md:col-span-2 flex md:justify-end">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full border border-border transition-all group-hover:border-primary group-hover:bg-primary group-hover:text-primary-foreground">
+                    <ArrowUpRight className="h-5 w-5" />
+                  </div>
+                </div>
+              </a>
             ))}
           </div>
         </div>
