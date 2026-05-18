@@ -68,6 +68,7 @@ function Index() {
           </a>
           <nav className="hidden gap-8 font-mono text-xs tracking-widest uppercase md:flex">
             <a href="#work" className="hover:text-primary transition-colors">Work</a>
+            <a href="#experience" className="hover:text-primary transition-colors">Experience</a>
             <a href="#about" className="hover:text-primary transition-colors">About</a>
             <a href="#contact" className="hover:text-primary transition-colors">Contact</a>
           </nav>
