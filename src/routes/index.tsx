@@ -9,7 +9,7 @@ const experience = [
     url: "https://www.traxxion.ai/",
     description:
       "Contributed to an AI-powered Workforce Management platform — building responsive interfaces for time tracking, intelligent employee scheduling, and real-time labor analytics used by organizations to streamline operations.",
-    stack: ["React", "TypeScript", "TailwindCSS"],
+    stack: ["React", "React Native", "TypeScript", "TailwindCSS"],
   },
 ];
 
